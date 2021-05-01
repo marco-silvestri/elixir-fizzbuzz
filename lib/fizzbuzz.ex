@@ -6,10 +6,10 @@ defmodule Fizzbuzz do
   def cycleThroughRange() do
     for n <- 1..100 do
       case Fizzbuzz.isFizzOrBuzz(n) do
-        {0, 0} -> "FizzBuzz"
-        {0, _} -> "Fizz"
-        {_, 0} -> "Buzz"
-        {_, _} -> n
+        {x, y} when x === 0 and y !== 0 -> "Fizz"
+        {x, y} when x !== 0 and y === 0 -> "Buzz"
+        {x, y} when x === 0 and y === 0 -> "FizzBuzz"
+        {x, y} when x !== 0 and y !== 0 -> n
       end
     end
   end
